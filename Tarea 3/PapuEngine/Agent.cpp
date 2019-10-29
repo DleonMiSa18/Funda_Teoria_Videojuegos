@@ -27,8 +27,7 @@ bool Agent::collideWithLevel(const std::vector<std::string>& levelData) {
 
 	if (collideTilePosition.size() == 0) return false;
 
-	for (size_t i = 0; i < collideTilePosition.size(); i++)
-	{
+	for (size_t i = 0; i < collideTilePosition.size(); i++){
 		collideWithTile(collideTilePosition[i]);
 	}
 
@@ -66,31 +65,31 @@ void Agent::checkTilePosition(const std::vector<std::string>& levelData, std::ve
 	}
 }
 
-void Agent::collideWithTile(glm::vec2 tilePos) {
+void Agent::collideWithTile(glm::vec2 tilePosition) {
 
 	const float TILE_RADIUS = (float)TILE_WIDTH / 2.0f;
 	const float MIN_DISTANCE = AGENT_RADIUS + TILE_RADIUS;
 
-	glm::vec2 centerPosition = _position + glm::vec2(AGENT_RADIUS);
-	glm::vec2 distVec = centerPosition - tilePos;
-	float xdepth = MIN_DISTANCE - abs(distVec.x);
-	float ydepth = MIN_DISTANCE - abs(distVec.y);
+	glm::vec2 centPosition = _position + glm::vec2(AGENT_RADIUS);
+	glm::vec2 distVec = centPosition - tilePosition;
+	float xd = MIN_DISTANCE - abs(distVec.x);
+	float yd = MIN_DISTANCE - abs(distVec.y);
 
-	if (xdepth > 0 || ydepth > 0) {
-		if (std::max(xdepth, 0.0f) < std::max(ydepth, 0.0f)) {
+	if (xd > 0 || yd > 0) {
+		if (std::max(xd, 0.0f) < std::max(yd, 0.0f)) {
 			if (distVec.x < 0) {
-				_position.x -= xdepth;
+				_position.x -= xd;
 			}
 			else {
-				_position.x += xdepth;
+				_position.x += xd;
 			}
 		}
 		else {
 			if (distVec.y < 0) {
-				_position.y -= ydepth;
+				_position.y -= yd;
 			}
 			else {
-				_position.y += ydepth;
+				_position.y += yd;
 			}
 		}
 	}

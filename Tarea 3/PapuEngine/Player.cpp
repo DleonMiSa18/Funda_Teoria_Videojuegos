@@ -14,13 +14,13 @@ void Player::update(const std::vector<std::string>& levelData,
 	if (_inputManager->isKeyPressed(SDLK_w)) {
 		_position.y += _speed;
 	}
-	if (_inputManager->isKeyPressed(SDLK_s)) {
+	else if (_inputManager->isKeyPressed(SDLK_s)) {
 		_position.y -= _speed;
 	}
-	if (_inputManager->isKeyPressed(SDLK_a)) {
+	else if (_inputManager->isKeyPressed(SDLK_a)) {
 		_position.x -= _speed;
 	}
-	if (_inputManager->isKeyPressed(SDLK_d)) {
+	else if (_inputManager->isKeyPressed(SDLK_d)) {
 		_position.x += _speed;
 	}
 	collideWithLevel(levelData);

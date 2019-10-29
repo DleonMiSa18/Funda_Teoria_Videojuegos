@@ -10,7 +10,7 @@ public:
 
 	void update(const std::vector<std::string>& levelData,
 		std::vector<Human*>& humans,
-		std::vector<Zombie*>& zombies);
+		std::vector<Zombie*>& zombies);		
 	Human* getNearestHuman(std::vector<Human*>& humans);
 };
 

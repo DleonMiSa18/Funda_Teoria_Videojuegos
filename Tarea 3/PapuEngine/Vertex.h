@@ -38,7 +38,6 @@ struct Vertex {
 	Position position;
 	Color color;
 	UV uv;
-	
 	void setUV(float u, float v) {
 		uv.set(u, v);
 	}
